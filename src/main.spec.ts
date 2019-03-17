@@ -1,21 +1,26 @@
-import { feature, scenario, xfeature, xscenario } from "./main"
+import { and, feature, given, scenario, then, when, xand, xfeature, xscenario, xthen } from "./main"
 
 
 
 
 scenario( ``, () => {
-	test( ``, () => expect( true ).toBe( true ) )
+	given((  ) => {})
+	when((  ) => {})
+	then( ``, () => expect( true ).toBe( true ) )
+	and( ``, () => expect( true ).toBe( true ) )
+	xthen( ``, () => expect( true ).toBe( true ) )
+	xand( ``, () => expect( true ).toBe( true ) )
 } )
 
 feature( ``, () => {
-	test( ``, () => expect( true ).toBe( true ) )
+	then( ``, () => expect( true ).toBe( true ) )
 } )
 
 xscenario( ``, () => {
-	test( ``, () => expect( true ).toBe( true ) )
+	then( ``, () => expect( true ).toBe( true ) )
 } )
 
 xfeature( ``, () => {
-	test( ``, () => expect( true ).toBe( true ) )
+	then( ``, () => expect( true ).toBe( true ) )
 } )
 
