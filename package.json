@@ -1,7 +1,7 @@
 {
-    "name": "jest-case",
+    "name": "jest-then",
     "version": "1.0.0",
-    "description": "",
+    "description": "Dumb simple \"Given when then\" aliases for jest",
     "source": "src/main.ts",
     "main": "dist/main.js",
     "types": "dist/main.d.ts",
@@ -10,7 +10,17 @@
         "build": "microbundle",
         "start": "microbundle watch"
     },
-    "keywords": [],
+    "keywords": [
+        "given",
+        "when",
+        "then",
+        "jest",
+        "bdd",
+        "cucumber",
+        "testing",
+        "scenario",
+        "feature"
+    ],
     "author": "Edouard Penin <e.peninb@gmail.com>",
     "license": "ISC",
     "devDependencies": {
