@@ -45,35 +45,20 @@ feature( `A user can sign-in`, () => {
 		// ... etc
 	} )
 } )
-
-
-
 ```
 
-## Available APIs
+## Available keywords
+> Note, you can still use their full api. meaning you can use `xscenario` or `scenario.only` as you would with `describe` or `it`  😇
 
-scenario -> describe
- 
-feature -> describe 
+| Keyword       | Alias for    |      
+| ------------- |-------------| 
+| scenario      | describe | 
+| feature       | describe|
+| given         |   beforeEach |
+| when          |   beforeEach  |
+| then          |   test/it |
+| and           |   test/it|
 
-
-given -> beforeEach
- 
-when -> beforeEach 
-
-
-then -> test
- 
-and -> test 
-
-
-xscenario -> xdescribe
- 
-xfeature -> xdescribe
- 
-xthen -> xtest
- 
-xand -> xtest 
 
 ## But what if jest changes
 Under the hood, this thing uses javascript proxies. I only delegate to the original jest object so you're safe 🥳
