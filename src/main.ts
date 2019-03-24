@@ -13,23 +13,27 @@ function clone<T>( thing: T & Object & Function ): T
 }
 
 
-export const scenario: jest.Describe = clone( describe )
+export const Scenario: jest.Describe = clone( describe )
 
-export const feature: jest.Describe = clone( describe )
+export const Feature: jest.Describe = clone( describe )
 
-export const given: jest.Lifecycle = clone( beforeEach )
+export const Case: jest.Describe = clone( describe )
 
-export const when: jest.Lifecycle = clone( beforeEach )
+export const Given: jest.Lifecycle = clone( beforeEach )
 
-export const xscenario: jest.Describe = clone( xdescribe )
+export const When: jest.Lifecycle = clone( beforeEach )
 
-export const xfeature: jest.Describe = clone( xdescribe )
+export const Then: jest.It = clone( test )
 
-export const then: jest.It = clone( test )
+export const And: jest.It = clone( test )
 
-export const and: jest.It = clone( test )
+export const xScenario: jest.Describe = clone( xdescribe )
 
-export const xthen: jest.It = clone( xtest )
+export const xFeature: jest.Describe = clone( xdescribe )
 
-export const xand: jest.It = clone( xtest )
+export const xCase: jest.Describe = clone( xdescribe )
+
+export const xThen: jest.It = clone( xtest )
+
+export const xAnd: jest.It = clone( xtest )
 
