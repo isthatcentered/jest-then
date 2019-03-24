@@ -5,40 +5,40 @@ Jest-then provides new keywords to help give your tests meaning and differentiat
 
 ## What does it look like ?
 ```typescript
-feature( `A user can sign-in`, () => {	
-	scenario( `Success`, () => {
-		given( () => {
+Feature( `A user can sign-in`, () => {	
+	Scenario( `Success`, () => {
+		Given( () => {
 			// ... pre-conditions for scenario to work
-			when( authProvider.isAuthenticated() ).thenReturn( false )
-			when( authProvider.signup( credentials ) ).thenResolve()
+			When( authProvider.isAuthenticated() ).thenReturn( false )
+			When( authProvider.signup( credentials ) ).thenResolve()
 		} )
 		
-		then( `A loader is displayed`, async () => {
+		Then( `A loader is displayed`, async () => {
 			// ... code
 			
 		} )
 		
-		and( `A success message is passed to the view`, () => {
+		And( `A success message is passed to the view`, () => {
 			// ... code
 		} )
 		
-		and( `User is redirected to home after a timeout`, async () => {
+		And( `User is redirected to home after a timeout`, async () => {
 			// ... code
 		} )
 	} )
 	
-	scenario( `Sign-up error`, () => {
-		given( () => {
+	Scenario( `Sign-up error`, () => {
+		Given( () => {
 			// ... pre-conditions for scenario to work
-			when( authProvider.isAuthenticated() ).thenReturn( false )
-			when( authProvider.signup( credentials ) ).thenReject( error )
+			When( authProvider.isAuthenticated() ).thenReturn( false )
+			When( authProvider.signup( credentials ) ).thenReject( error )
 		} )
 		
-		then( `An error message is passed to the view`, async () => {
+		Then( `An error message is passed to the view`, async () => {
 			// ... code
 		} )
 		
-		and( `Loader is disabled`, async () => {
+		And( `Loader is disabled`, async () => {
 			// ... code
 		} )
 		
@@ -52,12 +52,13 @@ feature( `A user can sign-in`, () => {
 
 | Keyword       | Alias for    |      
 | ------------- |-------------| 
-| scenario      | describe | 
-| feature       | describe|
-| given         |   beforeEach |
-| when          |   beforeEach  |
-| then          |   test/it |
-| and           |   test/it|
+| Scenario      | describe | 
+| Feature       | describe|
+| Case       | describe|
+| Given         |   beforeEach |
+| When          |   beforeEach  |
+| Then          |   test/it |
+| And           |   test/it|
 
 
 ## But what if jest changes
