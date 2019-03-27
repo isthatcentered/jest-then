@@ -13,27 +13,48 @@ function clone<T>( thing: T & Object & Function ): T
 }
 
 
-export const Scenario: jest.Describe = clone( describe )
+declare const Scenario: jest.Describe;
+declare const Feature: jest.Describe;
+declare const Case: jest.Describe;
+declare const Given: jest.Lifecycle;
+declare const When: jest.Lifecycle;
+declare const Then: jest.It;
+declare const And: jest.It;
+declare const xScenario: jest.Describe;
+declare const xFeature: jest.Describe;
+declare const xCase: jest.Describe;
+declare const xThen: jest.It;
+declare const xAnd: jest.It;
 
-export const Feature: jest.Describe = clone( describe )
+declare module NodeJS
+{
+	interface Global
+	{
+		Scenario: jest.Describe;
+		Feature: jest.Describe;
+		Case: jest.Describe;
+		Given: jest.Lifecycle;
+		When: jest.Lifecycle;
+		Then: jest.It;
+		And: jest.It;
+		xScenario: jest.Describe;
+		xFeature: jest.Describe;
+		xCase: jest.Describe;
+		xThen: jest.It;
+		xAnd: jest.It;
+	}
+}
 
-export const Case: jest.Describe = clone( describe )
-
-export const Given: jest.Lifecycle = clone( beforeEach )
-
-export const When: jest.Lifecycle = clone( beforeEach )
-
-export const Then: jest.It = clone( test )
-
-export const And: jest.It = clone( test )
-
-export const xScenario: jest.Describe = clone( xdescribe )
-
-export const xFeature: jest.Describe = clone( xdescribe )
-
-export const xCase: jest.Describe = clone( xdescribe )
-
-export const xThen: jest.It = clone( xtest )
-
-export const xAnd: jest.It = clone( xtest )
+global.Scenario = clone( describe )
+global.Feature = clone( describe )
+global.Case = clone( describe )
+global.Given = clone( beforeEach )
+global.When = clone( beforeEach )
+global.Then = clone( test )
+global.And = clone( test )
+global.xScenario = clone( xdescribe )
+global.xFeature = clone( xdescribe )
+global.xCase = clone( xdescribe )
+global.xThen = clone( xtest )
+global.xAnd = clone( xtest )
 
