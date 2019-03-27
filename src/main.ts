@@ -1,18 +1,3 @@
-function clone<T>( thing: T & Object & Function ): T
-{
-	return new Proxy( thing, {
-		get( ...args )
-		{
-			return Reflect.get( ...args )
-		},
-		apply( ...args ): any
-		{
-			return Reflect.apply( ...args )
-		},
-	} )
-}
-
-
 declare const Scenario: jest.Describe;
 declare const Feature: jest.Describe;
 declare const Case: jest.Describe;
@@ -58,3 +43,17 @@ global.xCase = clone( xdescribe )
 global.xThen = clone( xtest )
 global.xAnd = clone( xtest )
 
+
+function clone<T>( thing: T & Object & Function ): T
+{
+	return new Proxy( thing, {
+		get( ...args )
+		{
+			return Reflect.get( ...args )
+		},
+		apply( ...args ): any
+		{
+			return Reflect.apply( ...args )
+		},
+	} )
+}
