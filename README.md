@@ -5,6 +5,8 @@ Jest-then provides new keywords to help give your tests meaning and differentiat
 
 ## What does it look like ?
 ```typescript
+import "jest-then" // This make given, when, ... available as global variable
+
 Feature( `A user can sign-in`, () => {	
 	Scenario( `Success`, () => {
 		Given( () => {
